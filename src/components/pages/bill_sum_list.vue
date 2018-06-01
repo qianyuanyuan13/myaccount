@@ -1,35 +1,34 @@
 <template>
 <div class="bill">
-	<div class="top">
+	<el-row class="top" :gutter="24">
 		<!-- 支付渠道 -->
-			<span>支付渠道</span>
-			 <el-select v-model="formInline.region" placeholder="全部">
-				<el-option label="中金" value="zhongjing"></el-option>
-				<el-option label="邮箱" value="youxiang"></el-option>
-				<el-option label="联通" value="liantong"></el-option>
-			</el-select>
-			<!-- 日期选择初始 -->
-			<div class="block">
-				<span class="demonstration">交易日期（始）：</span>
-				<el-date-picker
-					v-model="formInline.value1"
-					type="date"
-					placeholder="选择日期">
-				</el-date-picker>
-			</div>
-			<div class="block">
-				<span class="demonstration">交易日期（至）：</span>
-				<el-date-picker
-					v-model="formInline.value2"
-					type="date"
-					placeholder="选择日期">
-				</el-date-picker>
-			</div>
-			<el-button type="primary" @click="onSubmit">查询</el-button>
-	<!-- </el-form> -->
+		<span>支付渠道</span>
+			<el-select v-model="formInline.region" placeholder="全部">
+			<el-option label="中金" value="zhongjing"></el-option>
+			<el-option label="邮箱" value="youxiang"></el-option>
+			<el-option label="联通" value="liantong"></el-option>
+		</el-select>
+		<!-- 日期选择初始 -->
+		<div class="block">
+			<span class="demonstration">交易日期（始）：</span>
+			<el-date-picker
+				v-model="formInline.value1"
+				type="date"
+				placeholder="选择日期">
+			</el-date-picker>
 		</div>
-	<!-- 下方表格 -->
-		<div class="content">
+		<div class="block">
+			<span class="demonstration">交易日期（至）：</span>
+			<el-date-picker
+				v-model="formInline.value2"
+				type="date"
+				placeholder="选择日期">
+			</el-date-picker>
+		</div>
+		<el-button type="primary" @click="onSubmit">查询</el-button>
+	</el-row>
+	<!-- 下方表格 -->	
+		<el-row class="table-container" :gutter="24">
 			<el-table
 				:data="tableData"
 				stripe
@@ -85,7 +84,7 @@
 				</template>
 				</el-table-column>
 			</el-table>
-		</div>
+		</el-row>
 		<div class="block pages">
 			<!-- <span class="demonstration">完整功能</span> -->
 			<el-pagination
@@ -140,6 +139,7 @@ export default {
 		},
 		handleClick(){
 			console.log('查看详情');
+			this.$router.push('/bill/detail');
 		}
   }
 };
