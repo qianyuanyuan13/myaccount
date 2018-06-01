@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import "../static/css/bootstrap.min.css"
-import "../static/css/css-table.css"
-import "../static/css/index.css"
-import "../static/css/page.css"
-import "../node_modules/bootstrap/dist/css/bootstrap.css"
-// import "../node_modules/bootstrap/dist/js/bootstrap"
+import "../static/css/reset.css"
+//引入elementui
+import 'element-ui/lib/theme-chalk/index.css'
+import ElementUI from 'element-ui'
+Vue.use(ElementUI);
 
 Vue.config.productionTip = false
 

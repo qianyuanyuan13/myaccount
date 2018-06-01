@@ -1,14 +1,18 @@
 <template>
-  <h1>账单</h1>
+	<h1>账单</h1>
 
 </template>
 <script>
 export default {
-    
+    data(){
+		return {
+			
+		}
+	}
 }
 </script>
 <style lang="less">
-
+  
 </style>
 
 
